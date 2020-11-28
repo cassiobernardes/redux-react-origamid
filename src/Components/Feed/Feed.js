@@ -45,7 +45,7 @@ const Feed = ({ user }) => {
       <FeedModal />
       {list.length > 0 && <FeedPhotos />}
       {loading && <Loading />}
-      {error && <Error />}
+      {error && <Error error={error} />}
 
       {!infinite && !user && (
         <p

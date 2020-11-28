@@ -4,14 +4,14 @@ import {
   getDefaultMiddleware,
 } from '@reduxjs/toolkit';
 import photo from './photo';
+import photoPost from './photoPost';
 import token from './token';
 import user from './user';
 import feed from './feed';
 import ui from './ui';
-import photoPost from './photoPost';
 
 const middleware = [...getDefaultMiddleware()];
-const reducer = combineReducers({ photo, token, user, feed, ui, photoPost });
+const reducer = combineReducers({ photo, photoPost, token, user, feed, ui });
 const store = configureStore({ reducer, middleware });
 
 export default store;

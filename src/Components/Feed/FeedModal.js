@@ -3,7 +3,7 @@ import styles from './FeedModal.module.css';
 import Error from '../Helper/Error';
 import Loading from '../Helper/Loading';
 import PhotoContent from '../Photo/PhotoContent';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../store/ui';
 
 const FeedModal = () => {
@@ -20,7 +20,6 @@ const FeedModal = () => {
   }, [dispatch]);
 
   if (!modal) return null;
-
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>
       {error && <Error error={error} />}

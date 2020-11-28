@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 const FeedPhotos = ({ setModalPhoto }) => {
   const { list } = useSelector((state) => state.feed);
-
   return (
     <ul className={`${styles.feed} animeLeft`}>
       {list.map((photo) => (

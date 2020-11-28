@@ -8,7 +8,7 @@ const fetchPhotoStarted = () => ({
   type: FETCH_PHOTO_STARTED,
 });
 
-const fetchPhotosSuccess = (data) => ({
+const fetchPhotoSuccess = (data) => ({
   type: FETCH_PHOTO_SUCCESS,
   payload: data,
 });
@@ -44,8 +44,8 @@ export default function photo(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        data: null,
         error: action.payload,
+        data: null,
       };
     default:
       return state;
@@ -59,7 +59,7 @@ export const fetchPhoto = (id) => async (dispatch) => {
     const response = await fetch(url, options);
     const data = await response.json();
     if (response.ok === false) throw new Error(data.message);
-    dispatch(fetchPhotosSuccess(data));
+    dispatch(fetchPhotoSuccess(data));
   } catch (error) {
     dispatch(fetchPhotoError(error.message));
   }

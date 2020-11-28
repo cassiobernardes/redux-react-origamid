@@ -15,7 +15,6 @@ import { autoLogin } from './store/user';
 
 function App() {
   const dispatch = useDispatch();
-
   React.useEffect(() => {
     dispatch(autoLogin());
   }, [dispatch]);

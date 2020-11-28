@@ -14,11 +14,12 @@ const slice = createAsyncSlice({
       if (action.payload.length === 0) state.infinite = false;
     },
     addPage(state) {
-      state.page++;
+      state.pages++;
     },
     resetState(state) {
       state.infinite = true;
       state.pages = 1;
+      state.list = [];
       state.data = null;
       state.error = null;
       state.loading = false;
